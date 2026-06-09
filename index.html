@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FLECO SOLUTIONS | Heavy Machinery & Civil Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fefaf5; color: #1e2a2e; scroll-behavior: smooth; }
+    .navbar { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); z-index: 100; }
+    .logo h2 { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #d97706, #b45309); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .logo p { font-size: 0.7rem; color: #6b7280; }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #2d3e2b; font-size: 0.9rem; transition: 0.2s; cursor: pointer; }
+    .nav-links a:hover { color: #d97706; }
+    .hero { background: linear-gradient(135deg, #1f3b1a, #2b5e2a); color: white; text-align: center; padding: 4rem 2rem; border-radius: 0 0 2rem 2rem; margin-bottom: 2rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; }
+    .hero p { font-size: 1rem; margin-top: 0.8rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .btn { background: #d97706; color: white; padding: 0.7rem 1.6rem; border-radius: 3rem; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1.2rem; border: none; cursor: pointer; transition: 0.2s; }
+    .btn:hover { background: #b45309; transform: scale(1.02); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 2rem 1.5rem; }
+    .section-title { font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; color: #2d3e2b; }
+    .section-sub { text-align: center; margin-bottom: 2rem; color: #6b7280; font-size: 0.9rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .service-card { background: white; border-radius: 1.5rem; padding: 1.5rem; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: 0.2s; border: 1px solid #f3e8da; }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-icon { font-size: 2.2rem; color: #d97706; margin-bottom: 0.8rem; }
+    .service-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.85rem; color: #4b5563; }
+    .ratings-list { background: white; border-radius: 1.5rem; padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #f3e8da; }
+    .ratings-list ul { list-style: none; padding-left: 0; }
+    .ratings-list li { margin-bottom: 0.75rem; font-size: 1rem; display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+    .ratings-list li strong { min-width: 100px; color: #d97706; }
+    .ratings-list li i { color: #10b981; width: 1.2rem; }
+    .equipment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .equip-card { background: white; border-radius: 1.2rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: 0.2s; border: 1px solid #f3e8da; display: flex; flex-direction: column; }
+    .equip-card:hover { transform: translateY(-4px); }
+    .equip-img { height: 160px; background: #e5e7eb; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .equip-img img { width: 100%; height: 100%; object-fit: cover; }
+    .equip-img .placeholder-icon { font-size: 3rem; color: #9ca3af; }
+    .equip-info { padding: 1rem; flex: 1; text-align: center; }
+    .equip-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .equip-desc { font-size: 0.85rem; color: #4b5563; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+    .gallery-item { background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .gallery-item img, .gallery-item iframe { width: 100%; height: 180px; object-fit: cover; border: none; }
+    .gallery-caption { padding: 0.5rem; text-align: center; font-size: 0.8rem; color: #4b5563; background: #f9fafb; }
+    .contact-section { background: #1f3b1a; color: white; border-radius: 1.5rem; padding: 2rem; text-align: center; margin: 2rem 0; }
+    .contact-details { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .contact-card { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 1rem; min-width: 160px; backdrop-filter: blur(4px); }
+    .contact-card i { font-size: 1.6rem; margin-bottom: 0.3rem; }
+    .contact-card h3 { font-size: 1rem; margin: 0.3rem 0; }
+    .contact-card p { font-size: 0.8rem; word-break: break-word; }
+    .whatsapp-link { display: inline-block; background: #25D366; color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; text-decoration: none; font-size: 0.85rem; margin-top: 0.5rem; transition: 0.2s; font-weight: 600; }
+    .whatsapp-link:hover { background: #128C7E; transform: scale(1.02); }
+    .copy-btn { background: #d97706; border: none; padding: 0.2rem 0.8rem; border-radius: 1.5rem; cursor: pointer; color: white; margin-top: 0.4rem; font-size: 0.7rem; }
+    .flex-buttons { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem; }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.7rem; color: #6b7280; border-top: 1px solid #e5e7eb; margin-top: 1rem; }
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; text-align: center; }
+      .hero h1 { font-size: 1.8rem; }
+      .container { padding: 0 1rem 1.5rem 1rem; }
+      .ratings-list li { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><h2>FLECO SOLUTIONS</h2><p>FOR HIRE | Civil Works & Equipment</p></div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#ratings">Ratings</a>
+    <a href="#machines">Machines for hire</a>
+    <a href="#gallery">Work done</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="hero">
+    <h1>Heavy Machinery & Civil Works</h1>
+    <p>Professional excavation, dam construction, road grading, gravelling, and other construction services across Machakos and surrounding counties.</p>
+    <a href="#contact" class="btn"><i class="fas fa-phone-alt"></i> Contact us</a>
+  </div>
+</section>
+
+<div class="container">
+  <section id="services">
+    <h2 class="section-title"><i class="fas fa-hard-hat"></i> Our core services</h2>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon"><i class="fas fa-digging"></i></div><h3>Excavation</h3><p>Site clearing, trenching, foundation pits, bulk earthmoving – precise and efficient.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-water"></i></div><h3>Dam Construction</h3><p>Water reservoirs, embankment dams, spillways, compaction, and lining.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Road Grading</h3><p>Gravel road maintenance, camber formation, leveling, and drainage channels.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div><h3>Gravelling</h3><p>Supply and spreading of gravel, murram, and base course for roads and driveways.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-building"></i></div><h3>Other Construction Services</h3><p>Foundation works, land levelling, site preparation, and general civil works.</p></div>
+    </div>
+  </section>
+
+  <section id="ratings">
+    <h2 class="section-title"><i class="fas fa-list-ul"></i> Ratings per machine</h2>
+    <div class="ratings-list">
+      <ul>
+        <li><i class="fas fa-check-circle"></i> <strong>Roller:</strong> Wet Rate: KES 28,000 per day, Dry Rate: KES 20,000 per day</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Grader:</strong> Wet Rate: KES 8,500 per hour, Dry Rate: KES 5,000 per hour</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Excavator:</strong> Wet Rate: KES 8,500 per hour, Dry Rate: KES 5,000 per hour</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Dozer:</strong> Wet Rate: KES 11,000 per hour, Dry Rate: KES 6,500 per hour</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Back Hoe:</strong> KES 5,000 per hour</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Shovel:</strong> KES 6,000 per hour</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="machines">
+    <h2 class="section-title"><i class="fas fa-tractor"></i> Machines for hire – based in Machakos Town</h2>
+    <p class="section-sub">Well‑maintained machinery • Experienced operators • We also serve other counties (transport fee applies)</p>
+    <div class="equipment-grid" id="equipmentGrid"></div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title"><i class="fas fa-camera"></i> Work done</h2>
+    <p class="section-sub">See photos and videos of recent projects – excavation, dams, road grading, gravelling.</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-section">
+      <h2>Get in touch</h2>
+      <div class="contact-details">
+        <div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Call / SMS</h3><p>0732238159</p><button class="copy-btn" data-copy="0732238159">Copy number</button></div>
+        
+        <div class="contact-card">
+          <i class="fab fa-whatsapp"></i>
+          <h3>WhatsApp</h3>
+          <p class="wa-number">+254 715 436 211</p>
+          <a href="https://wa.me/254715436211?text=Hello%20FLECO%20SOLUTIONS%2C%20I%20need%20a%20quote%20for%20your%20machinery%20and%20services." class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <button class="copy-btn" data-copy="254715436211">Copy number</button>
+        </div>
+
+        <div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>flecosolutions@gmail.com</p><button class="copy-btn" data-copy="flecosolutions@gmail.com">Copy email</button></div>
+        <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>Service area</h3><p><strong>Machakos and surrounding counties</strong><br>We travel to your site</p></div>
+      </div>
+      <p style="margin-top: 1rem;">📅 Mon–Sat: 7am – 6pm | 24/7 emergency support</p>
+    </div>
+  </section>
+</div>
+<footer>© 2026 FLECO SOLUTIONS FOR HIRE – Excavation, Dams, Road Grading, Gravelling & Construction Services.</footer>
+
+<script>
+  const equipmentList = [
+    { name: "Roller", desc: "Heavy-duty compaction for roads, dams, and foundations.", img: "https://i.postimg.cc/W3G3xKpT/Roller.jpg" },
+    { name: "Grader", desc: "Precision road grading, slope trimming, and levelling.", img: "https://i.postimg.cc/WzCFmZXn/Grader.jpg" },
+    { name: "Excavator", desc: "Heavy digging, trenching, and earthmoving.", img: "https://i.postimg.cc/sx3Xzc1z/Excavator.jpg" },
+    { name: "Dozer", desc: "Land clearing, levelling, and pushing heavy materials.", img: "https://i.postimg.cc/7636jcHs/Dozer.jpg" },
+    { name: "Back Hoe", desc: "Trenching, digging, and small excavation works.", img: "https://i.postimg.cc/7P36Yfv2/Back-Hoe.jpg" },
+    { name: "Shovel", desc: "Excavation, material handling, and earthmoving.", img: "https://i.postimg.cc/tJwZd62D/SHOVEL.jpg" }
+  ];
+
+  // ========== WORK DONE GALLERY – UPDATED WITH YOUR NEW VIDEO TITLES ==========
+  let galleryItems = [
+    { type: "image", url: "https://i.postimg.cc/sfY6cwcD/Capture3.png", caption: "Dam construction progress" },
+    { type: "image", url: "https://i.postimg.cc/vTt0ZZB0/Capture2.png", caption: "Machine going to work" },
+    { type: "image", url: "https://i.postimg.cc/VvWKkkvP/Capture4.png", caption: "Ground levelling" },
+    { type: "video", url: "https://player.vimeo.com/video/1199666084", caption: "Back Hoe doing Ground Leveling" },
+    { type: "video", url: "https://player.vimeo.com/video/1199666085", caption: "Shovel doing Excavation" }
+  ];
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+
+  function renderEquipment() {
+    const container = document.getElementById('equipmentGrid');
+    if (!container) return;
+    container.innerHTML = equipmentList.map(equip => `
+      <div class="equip-card">
+        <div class="equip-img">
+          <img src="${escapeHtml(equip.img)}" alt="${escapeHtml(equip.name)}" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-icon\\'><i class=\\'fas fa-tractor\\'></i></div>'">
+        </div>
+        <div class="equip-info">
+          <div class="equip-name">${escapeHtml(equip.name)}</div>
+          <div class="equip-desc">${escapeHtml(equip.desc)}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderGallery() {
+    const container = document.getElementById('galleryGrid');
+    if (!container) return;
+    if (!galleryItems.length) {
+      container.innerHTML = '<div style="text-align:center; padding:1rem;">No media yet. Edit galleryItems in the code to add photos/videos.</div>';
+      return;
+    }
+    container.innerHTML = galleryItems.map(item => {
+      if (item.type === 'image') {
+        return `
+          <div class="gallery-item">
+            <img src="${escapeHtml(item.url)}" alt="${escapeHtml(item.caption)}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e5e7eb/9ca3af?text=Image+not+found';">
+            <div class="gallery-caption">${escapeHtml(item.caption)}</div>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="gallery-item">
+            <iframe src="${escapeHtml(item.url)}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <div class="gallery-caption">${escapeHtml(item.caption)}</div>
+          </div>
+        `;
+      }
+    }).join('');
+  }
+
+  function setupCopyButtons() {
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        navigator.clipboard.writeText(text);
+        alert("Copied: " + text);
+      });
+    });
+  }
+
+  function setupNavigation() {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderEquipment();
+    renderGallery();
+    setupCopyButtons();
+    setupNavigation();
+  });
+</script>
+</body>
+</html>
